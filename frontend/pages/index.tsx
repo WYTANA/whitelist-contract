@@ -12,10 +12,10 @@ export default function Home() {
   const [joinedWhitelist, setJoinedWhitelist] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [numberOfWhitelisted, setNumberOfWhitelisted] = useState(0)
-  const web3ModalRef = useRef()
+  const web3ModalRef: any = useRef()
 
   const getProviderOrSigner = async (needSigner = false) => {
-    const provider = await web3ModalRef.current.connect()
+    const provider = web3ModalRef.current.connect()
     const web3Provider = new providers.Web3Provider(provider)
 
     const { chainId } = await web3Provider.getNetwork()
@@ -73,7 +73,7 @@ export default function Home() {
 
   const checkIfAddressInWhitelist = async () => {
     try {
-      const signer = await getProviderOrSigner(true)
+      const signer: any = await getProviderOrSigner(true)
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
         abi,
@@ -91,6 +91,7 @@ export default function Home() {
     }
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const connectWallet = async () => {
     try {
       await getProviderOrSigner()
