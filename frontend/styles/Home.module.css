@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .div {
@@ -18,8 +18,10 @@
   display: flex;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  font-size: large;
+  font-weight: bold;
 }
 
 .image {
@@ -39,9 +41,13 @@
   font-size: 1.2rem;
 }
 
+.num {
+  color: darkorange;
+}
+
 .button {
   border-radius: 4px;
-  background-color: blue;
+  background-color: darkorange;
   border: none;
   color: #ffffff;
   font-size: 15px;

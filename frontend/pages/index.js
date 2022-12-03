@@ -4,7 +4,10 @@ import styles from "../styles/Home.module.css"
 import Web3Modal from "web3modal"
 import { providers, Contract } from "ethers"
 import { useEffect, useRef, useState } from "react"
+
 import { WHITELIST_CONTRACT_ADDRESS, abi } from "../constants"
+import logo from "../public/white-none.svg"
+import scan from "../public/logos/etherscan-logo-light.png"
 
 export default function Home() {
   const [isWalletConnected, setIsWalletConnected] = useState(false)
@@ -128,7 +131,7 @@ export default function Home() {
       } else {
         return (
           <button onClick={addAddressToWhitelist} className={styles.button}>
-            Join the Whitelist
+            <strong>Join Whitelist!</strong>
           </button>
         )
       }
@@ -159,26 +162,44 @@ export default function Home() {
     <div>
       <Head>
         <title>Whitelist Dapp</title>
-        <meta name="description" content="Whitelist-Dapp" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Whitelist Promotion" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div className={styles.main}>
         <div className={styles.div}>
           <div>
-            <img className={styles.image} src="./white-none.svg" />
+            <Image
+              className={styles.image}
+              src={logo}
+              alt="wytana strategies logo"
+              width={50}
+              height={25}
+            />
           </div>
           <h1 className={styles.title}>Welcome to the WS Token ICO!</h1>
           <div className={styles.description}>
             Get your tokens before the public sale.
           </div>
           <div className={styles.description}>
-            {whitelistedAddresses} have already joined the Whitelist
+            Addresses whitelisted:{" "}
+            <strong>
+              <u className={styles.num}>{whitelistedAddresses}</u>
+            </strong>
           </div>
           {renderButton()}
         </div>
       </div>
 
-      <footer className={styles.footer}>&#169;2022 Wytana Strategies</footer>
+      <footer className={styles.footer}>
+        &#169;2022 Wytana Strategies
+        <a
+          href="https://goerli.etherscan.io/address/0x47CD3d925bFf4b20498580cAF125582558C6809F"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image src={scan} alt="etherscan" width={190.05} height={42.7} />{" "}
+        </a>{" "}
+      </footer>
     </div>
   )
 }
