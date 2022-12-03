@@ -161,7 +161,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Whitelist Dapp</title>
+        <title>WS ICO Whitelist</title>
         <meta name="description" content="Whitelist Promotion" />
         <link rel="icon" href="/favicon.png" />
       </Head>
