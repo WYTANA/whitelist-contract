@@ -7,6 +7,13 @@
   font-family: "Courier New", Courier, monospace;
 }
 
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .footer {
   display: flex;
   padding: 2rem 0;
@@ -43,6 +50,7 @@
   cursor: pointer;
   margin-bottom: 2%;
 }
+
 @media (max-width: 1000px) {
   .main {
     width: 100%;
